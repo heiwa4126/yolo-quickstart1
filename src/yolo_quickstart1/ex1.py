@@ -11,7 +11,9 @@ def ex1():
 
     model = YOLO(project_dir / "yolo26n.pt")
 
-    input_paths = [input_dir / file for file in ("ex1.jpg", "ex2.jpg")]
+    input_paths = [
+        input_dir / file for file in ("ex1.jpg", "ex2.jpg", "ex3.jpg", "ex4.jpg")
+    ]
     results = model(input_paths)
 
     if len(results) != len(input_paths):
