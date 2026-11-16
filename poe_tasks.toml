@@ -7,14 +7,14 @@ type = "uv"
 RUN_BASE = "src/pep440check"
 TRIVY_IGNORE = "--skip-dirs ./tmp,./xml"
 SHELL = "bash"
+BUS_SOURCE = "https://github.com/ultralytics/assets/releases/download/v0.0.0/bus.jpg"
 
 [tasks]
 main = "yolo-quickstart1"
 
-first_predict = "yolo predict model=yolo26n.pt"
+first_predict = "yolo predict model=yolo26n.pt project=\"$PWD/runs/detect\""
 
 ex0 = "python -m yolo_quickstart1.ex0"
-
 
 download_example0 = "mkdir -p examples dist"
 download_example1 = "curl -L https://raw.githubusercontent.com/heiwa4126/jev-node1/main/example/imgs/ex1.jpg -o examples/ex1.jpg"
@@ -22,6 +22,9 @@ download_example2 = "curl -L https://raw.githubusercontent.com/heiwa4126/jev-nod
 download_example = ["download_example0", "download_example1", "download_example2"]
 ex1 = "python -m yolo_quickstart1.ex1"
 
+bounding_box = "yolo predict model=yolo26n.pt source=\"$BUS_SOURCE\" save_dir=\"$PWD/runs/bounding_box\""
+segment = "yolo predict segment model=yolo26n-seg.pt source=\"$BUS_SOURCE\" save_dir=\"$PWD/runs/segment\""
+semantic = "yolo predict semantic model=yolo26n-sem.pt source=\"$BUS_SOURCE\" save_dir=\"$PWD/runs/semantic\""
 
 # ======== tests
 test = "pytest -v --tb=short src"
