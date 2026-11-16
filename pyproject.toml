@@ -1,0 +1,18 @@
+[project]
+name = "yolo-quickstart1"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [{ name = "heiwa4126", email = "heiwa4126@gmail.com" }]
+requires-python = ">=3.13"
+dependencies = ["ultralytics>=8.4.215"]
+
+[project.scripts]
+yolo-quickstart1 = "yolo_quickstart1:main"
+
+[build-system]
+requires = ["uv_build>=0.13.8,<0.14.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = ["poethepoet>=0.49.0"]
