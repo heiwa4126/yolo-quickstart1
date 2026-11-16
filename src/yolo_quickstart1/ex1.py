@@ -11,17 +11,16 @@ def ex1():
 
     model = YOLO(project_dir / "yolo26n.pt")
 
-    for file in ("ex1.jpg", "ex2.jpg"):
-        input_path = input_dir / file
-        output_path = output_dir / file
+    input_paths = [input_dir / file for file in ("ex1.jpg", "ex2.jpg")]
+    results = model(input_paths)
 
-        results = model(input_path)
-        if not results:
-            raise RuntimeError(
-                f"No prediction result for {input_path}; check that it is a readable image."
-            )
+    if len(results) != len(input_paths):
+        raise RuntimeError(
+            f"Expected {len(input_paths)} prediction results, got {len(results)}."
+        )
 
-        results[0].save(filename=str(output_path))
+    for input_path, result in zip(input_paths, results, strict=True):
+        result.save(filename=str(output_dir / input_path.name))
 
 
 if __name__ == "__main__":
