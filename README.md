@@ -29,9 +29,18 @@ uv run poe ex0
 
 ```sh
 # すでにある画像ファイルに対して predict を行って、
-# 結果を指定された場所に出力する
-poe download_examples
-poe ex1
+# 結果を指定された場所に出力する Python コード
+poe download_example
+poe ex1 # 入力: examples/ex1.jpg, 出力 dist/ex1.jpg
+
+## 同じことを YOLO CLI で
+poe ex5 # 入力: examples/ex5.jpg, 出力 dist/ex5.jpg
+poe ex6 # 入力: examples/ex6.jpg, 出力 dist/ex6.jpg
+
+# ミディアムモデル(yolo26m)版. 精度が上がる
+poe ex4m # 入力: examples/ex4.jpg, 出力 dist/ex4.jpg
+poe ex5m # 入力: examples/ex5.jpg, 出力 dist/ex5.jpg
+poe ex6m # 入力: examples/ex6.jpg, 出力 dist/ex6.jpg
 ```
 
 ## CPUの仕様を強制する
@@ -46,7 +55,7 @@ CUDA_VISIBLE_DEVICES=-1 uv run poe first_predict
 
 ## 注意: yolo cli の出力先
 
-`yolo setting` はグローバル設定なので注意。
+`yolo setting`はグローバル設定なので注意。
 
 設定一覧:
 [Ultralytics Settings and Configuration](https://docs.ultralytics.com/usage/settings)
@@ -55,7 +64,7 @@ CUDA_VISIBLE_DEVICES=-1 uv run poe first_predict
 
 サブコマンド式じゃないので注意
 
-「`yolo TASK MODE ARGS` で TASK と ARGS は省略可能」という「第一引数が省略可能」なのが落とし穴で、
+「`yolo TASK MODE ARGS`で TASK と ARGS は省略可能」という「第一引数が省略可能」なのが落とし穴で、
 オプション式でないのも変。
 
 [Command Line Interface | Ultralytics](https://docs.ultralytics.com/usage/cli)
@@ -70,9 +79,10 @@ CUDA_VISIBLE_DEVICES=-1 uv run poe first_predict
 というモデルがあるのでテスト
 
 ```sh
+# 対象画像は bus.jpg
 poe bounding_box
 poe segment
 poe semantic
 ```
 
-出力は `runs/` の下に出る。
+出力は`runs/`の下に出る。
