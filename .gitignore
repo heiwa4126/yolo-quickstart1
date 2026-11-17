@@ -21,7 +21,7 @@ tmp*.*
 *.dump
 
 *.pt
-*.onxx
+*.onnx
 runs/*
 bus.jpg
 
