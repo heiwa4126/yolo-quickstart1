@@ -26,4 +26,4 @@ runs/*
 bus.jpg
 
 examples/
-dist/
+output/

@@ -31,16 +31,16 @@ uv run poe ex0
 # すでにある画像ファイルに対して predict を行って、
 # 結果を指定された場所に出力する Python コード
 poe download_example
-poe ex1 # 入力: examples/ex1.jpg, 出力 dist/ex1.jpg
+poe ex1 # 入力: examples/ex1.jpg, 出力 output/ex1.jpg
 
 ## 同じことを YOLO CLI で
-poe ex5 # 入力: examples/ex5.jpg, 出力 dist/ex5.jpg
-poe ex6 # 入力: examples/ex6.jpg, 出力 dist/ex6.jpg
+poe ex5 # 入力: examples/ex5.jpg, 出力 output/ex5.jpg
+poe ex6 # 入力: examples/ex6.jpg, 出力 output/ex6.jpg
 
 # ミディアムモデル(yolo26m)版. 精度が上がる
-poe ex4m # 入力: examples/ex4.jpg, 出力 dist/ex4.jpg
-poe ex5m # 入力: examples/ex5.jpg, 出力 dist/ex5.jpg
-poe ex6m # 入力: examples/ex6.jpg, 出力 dist/ex6.jpg
+poe ex4m # 入力: examples/ex4.jpg, 出力 output/ex4.jpg
+poe ex5m # 入力: examples/ex5.jpg, 出力 output/ex5.jpg
+poe ex6m # 入力: examples/ex6.jpg, 出力 output/ex6.jpg
 ```
 
 ## CPUの仕様を強制する

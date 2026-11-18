@@ -17,7 +17,7 @@ first_predict = "yolo predict model=yolo26n.pt project=\"$PWD/runs/detect\""
 
 ex0 = "python -m yolo_quickstart1.ex0"
 
-download_example0 = "mkdir -p examples dist"
+download_example0 = "mkdir -p examples output"
 download_example1 = "curl -L \"$IMG_SOURCE/ex1.jpg\" -o examples/ex1.jpg"
 download_example2 = "curl -L \"$IMG_SOURCE/ex2.jpg\" -o examples/ex2.jpg"
 download_example3 = "curl -L \"$IMG_SOURCE/ex3.jpg\" -o examples/ex3.jpg"
@@ -36,11 +36,11 @@ download_example = [
 
 ex1 = "python -m yolo_quickstart1.ex1"
 
-ex4m = "yolo predict model=yolo26m.pt source=./examples/ex4.jpg save_dir=\"$PWD/dist\""
-ex5 = "yolo predict model=yolo26n.pt source=./examples/ex5.jpg save_dir=\"$PWD/dist\""
-ex5m = "yolo predict model=yolo26m.pt source=./examples/ex5.jpg save_dir=\"$PWD/dist\""
-ex6 = "yolo predict model=yolo26n.pt source=./examples/ex6.jpg save_dir=\"$PWD/dist\""
-ex6m = "yolo predict model=yolo26m.pt source=./examples/ex6.jpg save_dir=\"$PWD/dist\""
+ex4m = "yolo predict model=yolo26m.pt source=./examples/ex4.jpg save_dir=\"$PWD/output\""
+ex5 = "yolo predict model=yolo26n.pt source=./examples/ex5.jpg save_dir=\"$PWD/output\""
+ex5m = "yolo predict model=yolo26m.pt source=./examples/ex5.jpg save_dir=\"$PWD/output\""
+ex6 = "yolo predict model=yolo26n.pt source=./examples/ex6.jpg save_dir=\"$PWD/output\""
+ex6m = "yolo predict model=yolo26m.pt source=./examples/ex6.jpg save_dir=\"$PWD/output\""
 
 bounding_box = "yolo predict model=yolo26n.pt source=\"$BUS_SOURCE\" save_dir=\"$PWD/runs/bounding_box\""
 segment = "yolo predict segment model=yolo26n-seg.pt source=\"$BUS_SOURCE\" save_dir=\"$PWD/runs/segment\""

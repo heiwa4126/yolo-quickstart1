@@ -6,7 +6,7 @@ from ultralytics import YOLO
 def ex1():
     project_dir = Path(__file__).resolve().parents[2]
     input_dir = project_dir / "examples"
-    output_dir = project_dir / "dist"
+    output_dir = project_dir / "output"
     output_dir.mkdir(parents=True, exist_ok=True)
 
     model = YOLO(project_dir / "yolo26n.pt")
